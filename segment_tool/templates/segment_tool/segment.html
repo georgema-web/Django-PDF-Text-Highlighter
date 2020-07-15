@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block headcontent %}
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>	 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{%endblock%}
+
+
+{%block pagecontent%}
+	<p> Image: {{img_id}}</p>
+	
+	<div id='image_container'> </div>
+	
+	
+	<p></p>
+	<p> Kernel: {{kernel_x}}, {{kernel_y}}</p>
+	<button onclick='increaseKernel({{img_id}})'>Increase Kernel</button> 
+	<button onclick='decreaseKernel({{img_id}})'>Decrease Kernel</button> 
+
+	<script type='text/javascript' src = "{% static 'segment_tool/segment.js' %}" > </script> 	
+	<script type='text/jsx' src = "{% static 'segment_tool/segment_react.js' %}" > </script> 
+{%endblock%}
